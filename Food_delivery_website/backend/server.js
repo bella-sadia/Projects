@@ -6,6 +6,7 @@ import userRouter from './routes/userRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderRouter from './routes/orderRoute.js';
 import 'dotenv/config';
+import deliveryRouter from './routes/deliveryRoute.js';
 
 // Verify JWT_SECRET
 //console.log('JWT_SECRET:', process.env.JWT_SECRET);
@@ -32,6 +33,7 @@ app.use('/images', express.static('uploads'));
 app.use('/api/user', userRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
+app.use('/api/delivery', deliveryRouter);
 
 app.get('/', (req, res) => {
     res.send('API Working');
